@@ -1,0 +1,141 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  color: white;
+  font-size: 20px;
+}
+
+.header,
+.navBar,
+.footer {
+  z-index: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  z-index: 1; /* Keep z-index lower for the footer */
+  border-top: 1px solid white;
+  padding-top: 10px;
+}
+.icon {
+  position: relative;
+  margin: 0 10px;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px; /* Height of the expanding line */
+  background-color: white;
+  transition: width 0.3s ease-out; /* Adjust the transition duration and timing function */
+  transform: translateX(-50%);
+}
+
+.icon:hover::before {
+  width: 100%; /* Expand the line to 100% on hover */
+}
+a {
+  margin-left: 10px;
+}
+
+.header {
+  text-align: center;
+  z-index: 2; /* Increase z-index for the header */
+}
+.header h1,
+.header h3 {
+  display: block;
+  margin: 10px;
+  font-size: 50px;
+}
+
+.header h1 {
+  color: #4fc8bc;
+}
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center the text horizontally */
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  padding: 10px;
+  z-index: 3; /* Increase z-index for the fixed navbar */
+}
+
+.abt-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh; /* set a height to the container for vertical centering */
+  flex-direction: column;
+}
+
+.selfie {
+  margin-bottom: 93px; /* Add some margin between the image and text */
+}
+
+.selfie img {
+  max-width: 100%; /* Optional: Ensure the image doesn't exceed the container's width */
+}
+
+.card-img {
+  height: 200px; /* Set the desired height for the images */
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the entire container */
+}
+
+.contact-form {
+  margin: 40px;
+}
+
+.resume-div {
+  text-align: center;
+  height: 68vh;
+}
+
+.btn {
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: border-width 0.3s ease; /* Transition for border-width */
+  border: 2px solid transparent; /* Initial border style (transparent) */
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 2px solid #97c3fb; /* Color of the expanding line (initially transparent) */
+  transform: scale(0); /* Initial scale is 0, hidden */
+  transform-origin: 100% 50%; /* Transform origin set to the right */
+  transition: transform 0.3s ease; /* Transition for transform */
+}
+.btn:hover::before {
+  transform: scale(1); /* Scale to 1 on hover, showing the expanding line */
+}
+.btn:hover {
+  border: 2px solid #97c3fb; /* Border color on hover */
+}
+.contact-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 61vh;
+}
